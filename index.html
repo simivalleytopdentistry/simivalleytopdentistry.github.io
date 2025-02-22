@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simi Valley Top Dentistry</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    /* CSS Variables for easy customization */
+    :root {
+      --primary-color: #00539c;
+      --secondary-color: #003f72;
+      --accent-color: #0071c5;
+      --light-bg: #f5f5f5;
+      --dark-text: #333;
+    }
+
+    /* Reset and Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: "Roboto", sans-serif;
+      background-color: var(--light-bg);
+      color: var(--dark-text);
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: #fff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    /* Adjusted .container to display flex for logo + title */
+    header .title-container {
+      display: flex;
+      align-items: center;
+      justify-content: center; /* Center horizontally, adjust as needed */
+      padding: 0.75rem 0 0.5rem 0;
+    }
+    /* Logo styling */
+    header .title-container img {
+      height: 45px;
+      margin-right: 15px; /* Space between logo and title */
+      /* Optional border if you want a visible outline */
+      border: 2px solid #fff; 
+      /* This rounds the corners. Use 50% to make it a perfect circle (if the logo is square). */
+      border-radius: 10px;
+    }
+    header .title-container .site-title {
+      font-size: 1.8rem;
+    }
+
+    /* Navigation */
+    nav {
+      background: var(--secondary-color);
+    }
+    /* Hamburger Menu Toggle Button (hidden on larger screens) */
+    nav .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+    nav ul.nav-menu {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+    }
+    nav ul.nav-menu li {
+      margin: 0 1rem;
+    }
+    nav ul.nav-menu li a {
+      display: block;
+      padding: 0.75rem 1.5rem;
+      color: #fff;
+      text-decoration: none;
+      transition: background 0.3s, transform 0.3s;
+      border-radius: 4px;
+    }
+    nav ul.nav-menu li a:hover,
+    nav ul.nav-menu li a.active {
+      background: var(--accent-color);
+      transform: translateY(-2px);
+    }
+
+    /* Main Content */
+    main {
+      padding: 3rem 0;
+    }
+    section {
+      background: #fff;
+      margin-bottom: 4rem;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    }
+    section h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+      font-size: 2rem;
+      color: var(--primary-color);
+    }
+    section p {
+      text-align: center;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+      padding: 0 1rem;
+    }
+    section img {
+      display: block;
+      max-width: 300px;
+      width: 100%;
+      margin: 1rem auto;
+      border-radius: 50%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Flex container for dentist images */
+    .dentists {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    .dentist {
+      flex: 1;
+      text-align: center;
+    }
+
+    /* Services List Styling */
+    .services-list {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: left;
+      font-size: 1.1rem;
+      padding: 0 1rem;
+    }
+    .services-list li {
+      margin-bottom: 0.75rem;
+      margin-left: 2rem;
+      margin-right: 2rem;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+    .services-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--accent-color);
+    }
+
+    .services-list-contrainer {
+      display: flex;
+      justify-content: space-evenly;
+    }
+
+    /* New CSS for 2-column layout on larger screens */
+    @media (min-width: 768px) {
+      .services-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem 2rem;
+      }
+    }
+
+    /* Map Section */
+    .map-container {
+      margin-top: 2rem;
+    }
+    .map-container iframe {
+      width: 100%;
+      height: 450px;
+      border: none;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Footer - Modernized */
+    footer {
+      background: linear-gradient(135deg, #1f1f1f, #333);
+      color: #fff;
+      padding: 3rem 0;
+      text-align: center;
+    }
+    footer .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+    footer .social-links {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    footer .social-links a {
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background-color: #444;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+    footer .social-links a:hover {
+      background-color: var(--accent-color);
+      transform: scale(1.1);
+    }
+    
+    footer .social-links a.facebook {
+      background-image: url("https://img.icons8.com/ios-filled/50/ffffff/facebook-new.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 60%;
+    }
+    footer .social-links a.x {
+      background-image: url("https://img.icons8.com/ios-filled/50/ffffff/x.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 60%;
+    }
+    footer .social-links a.instagram {
+      background-image: url("https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 60%;
+    }
+    footer .footer-info p {
+      margin: 0.25rem 0;
+      font-size: 0.95rem;
+    }
+    footer a {
+      color: #fff;
+      text-decoration: underline;
+    }
+    footer a:hover {
+      text-decoration: none;
+    }
+
+    /* Modern Telephone Element */
+    .modern-phone {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--accent-color);
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    .modern-phone .phone-number {
+      margin-left: 0.5rem;
+      font-weight: bold;
+      color: var(--primary-color);
+      text-decoration: none;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      header .site-title {
+        font-size: 2rem;
+      }
+      /* Show the hamburger button and hide the nav links by default */
+      nav .menu-toggle {
+        display: block;
+        margin: 0.5rem;
+      }
+      nav ul.nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+      }
+      /* Display nav links when the menu is toggled open */
+      nav ul.nav-menu.open {
+        display: flex;
+      }
+      nav ul.nav-menu li {
+        margin: 0.5rem 0;
+      }
+    }
+
+    /* For smaller screens, stack dentist images vertically */
+    @media (max-width: 600px) {
+      .dentists {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header and Navigation -->
+  <header>
+    <div class="title-container">
+      <!-- New logo added here -->
+      <img src="imgs/logo.jpeg" alt="Simi Valley Top Dentistry Logo" />
+      <h1 class="site-title">Simi Valley Top Dentistry</h1>
+    </div>
+    <nav>
+      <div class="container">
+        <!-- Hamburger Menu Toggle Button -->
+        <button class="menu-toggle" aria-label="Toggle Navigation">&#9776;</button>
+        <ul class="nav-menu">
+          <li><a href="#bio" class="active">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#location">Location</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container">
+    <!-- About Us Section -->
+    <section id="bio">
+      <h2>About Us</h2>
+      <p>Learn more about our practice and our team of dental professionals.</p>
+      <h3 style="text-align: center; margin-bottom: 1rem;">Meet Our Dentists</h3>
+      <div class="dentists">
+        <div class="dentist">
+          <img src="imgs/one.jpeg" alt="Dr. Saeed Bigdeli" />
+          <p><strong>Dr. Saeed Bigdeli, DDS</strong></p>
+        </div>
+        <div class="dentist">
+          <img src="imgs/two.jpeg" alt="Dr. Dorsa Semsar" />
+          <p><strong>Dr. Dorsa Semsar, DMD</strong></p>
+        </div>
+      </div>
+      <p>
+        Our dentists are deeply committed to providing high-quality dental care. Driven by their passion for excellence and patient-centered treatment, they decided to open their own dental office. This allows them to create a welcoming environment where they can offer the best possible care, prioritize patient comfort, and utilize the latest advancements in dentistry to improve oral health and overall well-being.
+      </p>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+      <h2>Our Services</h2>
+      <p>
+        We offer a wide range of dental treatments to help you achieve a healthy and beautiful smile.
+        <br/>Our operating hours are <strong>Monday through Friday, 9 AM – 6 PM</strong>, and
+        <strong>Saturday by appointment only</strong>.
+        <br/>Call us today to schedule your appointment!
+        <br/><span itemprop="telephone" class="modern-phone">
+		      &#128222;<a href="tel:+18051234567" class="phone-number">+1 (805) 583-3339</a>
+        </span>
+      </p>
+      <p>Our services are as follows:</p>
+      <div class="services-list-contrainer">
+        <ul class="services-list">
+          <li><strong>General Dentistry</strong></li>
+          <li><strong>Endodontics</strong></li>
+          <li><strong>Oral Surgery</strong></li>
+          <li><strong>Implants</strong></li>
+          <li><strong>Dental Aesthetics</strong></li>
+          <li><strong>Dental prostheses</strong></li>
+          <li><strong>Periodontics</strong></li>
+          <li><strong>Pediatrics</strong></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location">
+      <h2>Our Location</h2>
+      <p>3977 Cochran St, Suite E, Simi Valley, CA</p>
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6593.512796348111!2d-118.718495!3d34.2802636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80e829aa1fc9d8b3%3A0x968e18f08687956f!2s3977%20Cochran%20St%20%23%20E%2C%20Simi%20Valley%2C%20CA%2093063!5e0!3m2!1sen!2sus!4v1737777580781!5m2!1sen!2sus"
+          loading="lazy"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="social-links">
+        <a href="https://facebook.com" target="_blank" class="facebook" aria-label="Facebook"></a>
+        <!-- <a href="https://x.com" target="_blank" class="x" aria-label="X"></a> -->
+        <a href="https://instagram.com" target="_blank" class="instagram" aria-label="Instagram"></a>
+      </div>
+      <div class="footer-info">
+        <p>
+          Contact us at:
+          <a href="mailto:smile@simivalleytopdentistry.com">smile@simivalleytopdentistry.com</a>
+          | +1 (805) 583-3339
+        </p>
+        <p>&copy; 2025 Simi Valley Top Dentistry. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript for Active Navigation and Mobile Menu Toggle -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Active Navigation Link
+      const sections = document.querySelectorAll("section");
+      const navLinks = document.querySelectorAll("nav ul.nav-menu li a");
+
+      function activateNavLink() {
+        let currentSection = "";
+
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop - 80; // Adjust based on header height
+          const sectionHeight = section.clientHeight;
+          if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+            currentSection = section.getAttribute("id");
+          }
+        });
+
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === `#${currentSection}`) {
+            link.classList.add("active");
+          }
+        });
+      }
+
+      window.addEventListener("scroll", activateNavLink);
+
+      // Mobile Menu Toggle
+      const menuToggle = document.querySelector('.menu-toggle');
+      const navMenu = document.querySelector('.nav-menu');
+
+      menuToggle.addEventListener('click', function() {
+        navMenu.classList.toggle('open');
+      });
+    });
+  </script>
+</body>
+</html>
