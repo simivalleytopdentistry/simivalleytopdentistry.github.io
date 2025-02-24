@@ -148,6 +148,22 @@
       flex: 1;
       text-align: center;
     }
+    /* Style for View Bio button */
+    .view-bio {
+      display: inline-block;
+      background-color: var(--accent-color);
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.85rem;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+    .view-bio:hover {
+      background-color: var(--primary-color);
+      transform: translateY(-2px);
+    }
 
     /* Services List Styling */
     .services-list {
@@ -197,7 +213,7 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
-    /* Footer - Modernized */
+    /* Footer */
     footer {
       background: linear-gradient(135deg, #1f1f1f, #333);
       color: #fff;
@@ -306,6 +322,83 @@
         flex-direction: column;
       }
     }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1001;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.4);
+    }
+    .modal-content {
+      background-color: #fff;
+      margin: 10% auto;
+      padding: 1rem;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 600px;
+      border-radius: 8px;
+    }
+    .close {
+      margin-right: 0.5rem;
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+    .close:hover,
+    .close:focus {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    /* Modern Bio Card Styles */
+    .bio-card {
+      font-family: "Roboto", sans-serif;
+      color: var(--dark-text);
+      background: #fff;
+      /* padding: 1.5rem; */
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 0.3s ease-out;
+    }
+    .bio-card h2 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+      color: var(--primary-color);
+    }
+    .bio-card p {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    .bio-card ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .bio-card ul li {
+      font-size: 0.95rem;
+      margin-bottom: 0.25rem;
+      position: relative;
+      padding-left: 1.2rem;
+    }
+    .bio-card ul li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--accent-color);
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
   </style>
 </head>
 <body>
@@ -340,10 +433,36 @@
         <div class="dentist">
           <img src="imgs/one.jpeg" alt="Dr. Saeed Bigdeli" />
           <p><strong>Dr. Saeed Bigdeli, DDS</strong></p>
+          <p>
+            <a href="#" class="view-bio" data-bio='<div class="bio-card">
+              <h2>Dr. Saeed Bigdeli, DDS</h2>
+              <p><strong>Education:</strong></p>
+              <ul>
+                <li>B.S. in Biochemistry &amp; Business, SUNY Plattsburgh</li>
+                <li>D.D.S., USC Herman Ostrow School of Dentistry (Cum Laude)</li>
+                <li>GPR, BronxCare</li>
+              </ul>
+            </div>'>
+              View Bio
+            </a>
+          </p>
         </div>
         <div class="dentist">
           <img src="imgs/two.jpeg" alt="Dr. Dorsa Semsar" />
           <p><strong>Dr. Dorsa Semsar, DMD</strong></p>
+          <p>
+            <a href="#" class="view-bio" data-bio='<div class="bio-card">
+              <h2>Dr. Dorsa Semsar, DMD</h2>
+              <p><strong>Education:</strong></p>
+              <ul>
+                <li>B.S. in Biology, University of California, Los Angeles</li>
+                <li>D.M.D., Boston University Henry M. Goldman School of Dental Medicine (Cum Laude)</li>
+                <li>AEGD, University of Connecticut School of Dental Medicine &amp; UCONN Health Hospital</li>
+              </ul>
+            </div>'>
+              View Bio
+            </a>
+          </p>
         </div>
       </div>
       <p>
@@ -388,6 +507,14 @@
       </div>
     </section>
   </main>
+
+  <!-- Modal for View Bio -->
+  <div id="bioModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div id="bioContent"></div>
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer>
@@ -442,6 +569,27 @@
 
       menuToggle.addEventListener('click', function() {
         navMenu.classList.toggle('open');
+      });
+
+      // Modal functionality for View Bio
+      const modal = document.getElementById("bioModal");
+      const modalContent = document.getElementById("bioContent");
+      const closeBtn = document.querySelector(".close");
+      document.querySelectorAll(".view-bio").forEach(function(button) {
+        button.addEventListener("click", function(e) {
+          e.preventDefault();
+          const bio = button.getAttribute("data-bio");
+          modalContent.innerHTML = bio;
+          modal.style.display = "block";
+        });
+      });
+      closeBtn.addEventListener("click", function() {
+        modal.style.display = "none";
+      });
+      window.addEventListener("click", function(e) {
+        if (e.target == modal) {
+          modal.style.display = "none";
+        }
       });
     });
   </script>
