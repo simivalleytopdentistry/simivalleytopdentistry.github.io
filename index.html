@@ -115,6 +115,7 @@
       padding: 2rem;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+      scroll-margin-top: 120px;
     }
     section h2 {
       text-align: center;
@@ -597,6 +598,13 @@
         navMenu.classList.toggle('open');
       });
 
+
+      navLinks.forEach((link) => {
+        link.addEventListener('click', function() {
+          navMenu.classList.remove('open');
+        });
+      });
+      
       // Modal functionality for View Bio
       const modal = document.getElementById("bioModal");
       const modalContent = document.getElementById("bioContent");
@@ -621,3 +629,4 @@
   </script>
 </body>
 </html>
+
