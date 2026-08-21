@@ -722,6 +722,140 @@
       color: var(--accent);
     }
 
+    /* Before & After */
+    .ba-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+    .ba-card {
+      background: #fff;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .ba-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+    .ba-compare {
+      position: relative;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      background: var(--primary-light);
+      touch-action: pan-y;
+    }
+    .ba-compare img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      user-select: none;
+      -webkit-user-drag: none;
+      pointer-events: none;
+    }
+    /* The "before" image sits on top and is clipped from the right as the handle moves. */
+    .ba-compare .ba-before { clip-path: inset(0 calc(100% - var(--pos, 50%)) 0 0); }
+    .ba-tag {
+      position: absolute;
+      bottom: 0.75rem;
+      z-index: 2;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: rgba(12, 47, 102, 0.78);
+      color: #fff;
+      pointer-events: none;
+    }
+    .ba-tag.left { left: 0.75rem; }
+    .ba-tag.right { right: 0.75rem; }
+    .ba-divider {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: var(--pos, 50%);
+      width: 3px;
+      margin-left: -1.5px;
+      background: #fff;
+      box-shadow: 0 0 0 1px rgba(12, 47, 102, 0.25);
+      z-index: 3;
+      pointer-events: none;
+    }
+    .ba-knob {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #fff;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-md);
+    }
+    .ba-knob svg { width: 20px; height: 20px; }
+    /* Transparent range input drives the slider: free keyboard + touch support. */
+    .ba-range {
+      position: absolute;
+      inset: 0;
+      z-index: 4;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      opacity: 0;
+      cursor: ew-resize;
+      -webkit-appearance: none;
+      appearance: none;
+      background: transparent;
+    }
+    .ba-range::-webkit-slider-thumb { -webkit-appearance: none; width: 44px; height: 100%; }
+    .ba-range::-moz-range-thumb { width: 44px; height: 100%; border: none; opacity: 0; }
+    .ba-range:focus-visible { outline: none; }
+    .ba-range:focus-visible ~ .ba-divider .ba-knob { box-shadow: 0 0 0 4px rgba(41, 182, 246, 0.55); }
+    .ba-body { padding: 1.25rem 1.4rem 1.5rem; }
+    .ba-body h3 { font-size: 1.02rem; margin-bottom: 0.35rem; }
+    .ba-body p { color: var(--text-muted); font-size: 0.88rem; }
+    .ba-note {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      margin: -1.5rem 0 3rem;
+    }
+
+    /* Instagram feature */
+    .ig-feature {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: center;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      padding: 2.25rem;
+    }
+    .ig-copy h3 { font-size: clamp(1.3rem, 2.4vw, 1.75rem); margin-bottom: 0.6rem; }
+    .ig-copy p { color: var(--text-muted); margin-bottom: 1.25rem; }
+    .ig-embed {
+      min-height: 480px;
+      display: flex;
+      justify-content: center;
+    }
+    .ig-embed blockquote.instagram-media { margin: 0 auto !important; min-width: 0 !important; }
+    .btn-ig {
+      background: linear-gradient(135deg, #f9ce34, #ee2a7b 45%, #6228d7);
+      color: #fff;
+      border: none;
+    }
+    .btn-ig:hover { filter: brightness(1.07); transform: translateY(-2px); }
+
     /* Responsive */
     @media (max-width: 980px) {
       .hero-inner { grid-template-columns: 1fr; }
@@ -729,6 +863,8 @@
       .dentists { grid-template-columns: repeat(2, 1fr); }
       .why-grid { grid-template-columns: repeat(2, 1fr); }
       .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .ba-grid { grid-template-columns: repeat(2, 1fr); }
+      .ig-feature { grid-template-columns: 1fr; gap: 2rem; }
       .info-banner { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
     }
@@ -772,6 +908,8 @@
       .dentists { grid-template-columns: 1fr; }
       .why-grid { grid-template-columns: 1fr; }
       .services-grid { grid-template-columns: 1fr; }
+      .ba-grid { grid-template-columns: 1fr; }
+      .ig-feature { padding: 1.5rem; }
       section.block { padding: 3.5rem 0; }
       .hero-visual img { width: 220px; height: 220px; }
       .hero-visual .blob { width: 260px; height: 260px; }
@@ -796,6 +934,7 @@
           <li><a href="#about" class="active">About</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#why-us">Why Us</a></li>
+          <li><a href="#smiles">Smiles</a></li>
           <li><a href="#location">Location</a></li>
         </ul>
       </nav>
@@ -1070,8 +1209,106 @@
       </div>
     </section>
 
+    <!-- Before & After -->
+    <section id="smiles" class="block">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Smile Gallery</span>
+          <h2>Before &amp; After</h2>
+          <!-- <p>Real results from our Simi Valley office. Drag the slider on each case to reveal the transformation.</p> -->
+        </div>
+
+        <!-- <div class="ba-grid reveal">
+          <div class="ba-card">
+            <div class="ba-compare" style="--pos:50%">
+              <img class="ba-after" src="imgs/cases/case1-after.svg" alt="Smile after treatment" loading="lazy" />
+              <img class="ba-before" src="imgs/cases/case1-before.svg" alt="Smile before treatment" loading="lazy" />
+              <span class="ba-tag left">Before</span>
+              <span class="ba-tag right">After</span>
+              <input class="ba-range" type="range" min="0" max="100" value="50" step="1"
+                     aria-label="Reveal before and after: porcelain veneers case" />
+              <div class="ba-divider">
+                <span class="ba-knob">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l-5 6 5 6M15 6l5 6-5 6"/></svg>
+                </span>
+              </div>
+            </div>
+            <div class="ba-body">
+              <h3>Porcelain Veneers</h3>
+              <p>Chipped and discolored front teeth reshaped into an even, natural-looking smile.</p>
+            </div>
+          </div>
+
+          <div class="ba-card">
+            <div class="ba-compare" style="--pos:50%">
+              <img class="ba-after" src="imgs/cases/case2-after.svg" alt="Smile after treatment" loading="lazy" />
+              <img class="ba-before" src="imgs/cases/case2-before.svg" alt="Smile before treatment" loading="lazy" />
+              <span class="ba-tag left">Before</span>
+              <span class="ba-tag right">After</span>
+              <input class="ba-range" type="range" min="0" max="100" value="50" step="1"
+                     aria-label="Reveal before and after: dental implant case" />
+              <div class="ba-divider">
+                <span class="ba-knob">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l-5 6 5 6M15 6l5 6-5 6"/></svg>
+                </span>
+              </div>
+            </div>
+            <div class="ba-body">
+              <h3>Dental Implant</h3>
+              <p>A missing tooth replaced with a permanent implant that blends with the surrounding teeth.</p>
+            </div>
+          </div>
+
+          <div class="ba-card">
+            <div class="ba-compare" style="--pos:50%">
+              <img class="ba-after" src="imgs/cases/case3-after.svg" alt="Smile after treatment" loading="lazy" />
+              <img class="ba-before" src="imgs/cases/case3-before.svg" alt="Smile before treatment" loading="lazy" />
+              <span class="ba-tag left">Before</span>
+              <span class="ba-tag right">After</span>
+              <input class="ba-range" type="range" min="0" max="100" value="50" step="1"
+                     aria-label="Reveal before and after: whitening and bonding case" />
+              <div class="ba-divider">
+                <span class="ba-knob">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l-5 6 5 6M15 6l5 6-5 6"/></svg>
+                </span>
+              </div>
+            </div>
+            <div class="ba-body">
+              <h3>Whitening &amp; Bonding</h3>
+              <p>Years of staining lifted and small gaps closed in a single treatment plan.</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="ba-note">Photos are of our own patients, shared with permission. Individual results vary.</p> -->
+
+        <!-- Instagram feature post -->
+        <div class="ig-feature reveal">
+          <div class="ig-copy">
+            <span class="eyebrow">From Our Instagram</span>
+            <h3>See our latest work and office news</h3>
+            <p>We share new cases, team updates and tips for keeping your smile healthy over on Instagram. Follow along at <strong>@simivalleytopdentistry</strong>.</p>
+            <a href="https://www.instagram.com/simivalleytopdentistry/" target="_blank" rel="noopener" class="btn btn-ig">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+              Follow Us on Instagram
+            </a>
+          </div>
+          <div class="ig-embed">
+            <blockquote class="instagram-media"
+              data-instgrm-permalink="https://www.instagram.com/p/DcKmUuwNA3M/?utm_source=ig_embed"
+              data-instgrm-version="14"
+              style="background:#fff; border:1px solid var(--border); border-radius:var(--radius); margin:0; max-width:540px; min-width:280px; padding:1.5rem; width:100%;">
+              <a href="https://www.instagram.com/p/DcKmUuwNA3M/" target="_blank" rel="noopener" style="text-decoration:none; color:var(--primary-dark); font-weight:600;">
+                View this post on Instagram &rarr;
+              </a>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Location -->
-    <section id="location" class="block">
+    <section id="location" class="block alt">
       <div class="container">
         <div class="section-head reveal">
           <span class="eyebrow">Find Us</span>
@@ -1128,6 +1365,7 @@
             <li><a href="#about">About Us</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#why-us">Why Choose Us</a></li>
+            <li><a href="#smiles">Before &amp; After</a></li>
             <li><a href="#location">Location</a></li>
           </ul>
         </div>
@@ -1232,6 +1470,18 @@
         if (e.key === "Escape") modal.style.display = "none";
       });
 
+      // Before/after sliders: a transparent range input drives the clip position,
+      // which keeps keyboard, touch and mouse working without custom drag handling.
+      document.querySelectorAll(".ba-compare").forEach(function (compare) {
+        const range = compare.querySelector(".ba-range");
+        if (!range) return;
+        function sync() {
+          compare.style.setProperty("--pos", range.value + "%");
+        }
+        range.addEventListener("input", sync);
+        sync();
+      });
+
       // Scroll reveal
       const revealEls = document.querySelectorAll(".reveal");
       const observer = new IntersectionObserver((entries) => {
@@ -1245,5 +1495,8 @@
       revealEls.forEach((el) => observer.observe(el));
     });
   </script>
+  <!-- Instagram embed renderer (upgrades the blockquote above into the real post) -->
+  <script async src="https://www.instagram.com/embed.js"></script>
+
 </body>
 </html>
