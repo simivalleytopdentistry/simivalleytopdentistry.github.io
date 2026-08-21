@@ -476,13 +476,22 @@
 
     /* Gratitude quote */
     .quote-block {
-      max-width: 800px;
+      max-width: 980px;
       margin: 3.5rem auto 0;
       background: var(--primary-light);
       border-radius: var(--radius);
       padding: 2.5rem;
       position: relative;
       border-left: 5px solid var(--accent);
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      align-items: center;
+      gap: 2.25rem;
+    }
+    .quote-photo img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: var(--shadow-md);
     }
     .quote-block .quote-mark {
       font-family: "Poppins", sans-serif;
@@ -754,6 +763,11 @@
       .cta-strip { flex-direction: column; text-align: center; }
     }
 
+    @media (max-width: 780px) {
+      .quote-block { grid-template-columns: 1fr; gap: 1.5rem; padding: 2rem 1.5rem; }
+      .quote-photo { max-width: 320px; margin: 0 auto; }
+    }
+
     @media (max-width: 600px) {
       .dentists { grid-template-columns: 1fr; }
       .why-grid { grid-template-columns: 1fr; }
@@ -955,9 +969,14 @@
         </div>
 
         <div class="quote-block reveal">
+          <div class="quote-photo">
+            <img src="imgs/Note of Gratitude.jpeg" alt="Dr. Bigdeli with his USC professors, Dr. Roberto Roges and Dr. Rafael Roges" loading="lazy" />
+          </div>
+          <div class="quote-text">
           <div class="quote-mark">&ldquo;</div>
           <p>Reflecting on his journey, Dr. Bigdeli is deeply thankful for the mentors who have guided him along the way. He recently reconnected with two of his esteemed USC professors, Dr. Roberto Roges and Dr. Rafael Roges, Director of the Advanced Dental Education Program in Endodontics. Sharing a meal and celebrating how far he has come reminded Dr. Bigdeli of the importance of mentorship, growth, and gratitude, values that continue to inspire his commitment to excellence in patient care.</p>
           <div class="attribution">A Note of Gratitude from Dr. Bigdeli</div>
+          </div>
         </div>
       </div>
     </section>
