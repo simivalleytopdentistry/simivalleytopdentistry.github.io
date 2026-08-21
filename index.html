@@ -3,41 +3,127 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Simi Valley Top Dentistry</title>
+  <title>Simi Valley Top Dentistry | Family &amp; Cosmetic Dentist in Simi Valley, CA</title>
+  <meta name="description" content="Simi Valley Top Dentistry offers general, cosmetic, restorative and pediatric dental care in Simi Valley, CA. Patient-first, USC-trained dentists. Call (805) 583-3339." />
   <link rel="icon" type="image/x-icon" href="imgs/favicon.ico">
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Pacifico&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
     rel="stylesheet"
   />
   <style>
-    /* CSS Variables for easy customization */
     :root {
-      --primary-color: #00539c;
-      --secondary-color: #003f72;
-      --accent-color: #0071c5;
-      --light-bg: #f5f5f5;
-      --dark-text: #333;
+      --primary: #1957b3;
+      --primary-dark: #0c2f66;
+      --primary-light: #e9f1fc;
+      --accent: #29b6f6;
+      --cta: #ff6b4a;
+      --cta-dark: #e6552f;
+      --text-dark: #1c2733;
+      --text-muted: #5a6a7d;
+      --bg: #ffffff;
+      --bg-alt: #f3f7fd;
+      --border: #e1ebfa;
+      --radius: 16px;
+      --shadow-sm: 0 2px 8px rgba(21, 79, 168, 0.08);
+      --shadow-md: 0 10px 30px rgba(21, 79, 168, 0.12);
+      --shadow-lg: 0 20px 50px rgba(21, 79, 168, 0.18);
     }
 
-    /* Reset and Global Styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
     body {
-      font-family: "Roboto", sans-serif;
-      background-color: var(--light-bg);
-      color: var(--dark-text);
-      line-height: 1.6;
+      font-family: "Inter", sans-serif;
+      background-color: var(--bg);
+      color: var(--text-dark);
+      line-height: 1.65;
+      overflow-x: hidden;
     }
+
+    h1, h2, h3, h4 {
+      font-family: "Poppins", sans-serif;
+      color: var(--primary-dark);
+    }
+
+    a { color: inherit; }
+
+    img { max-width: 100%; display: block; }
+
     .container {
-      max-width: 1200px;
+      max-width: 1180px;
       margin: 0 auto;
-      padding: 0 1rem;
+      padding: 0 1.5rem;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 0.6rem;
+    }
+
+    .section-head {
+      max-width: 680px;
+      margin: 0 auto 3rem;
+      text-align: center;
+    }
+    .section-head h2 {
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      margin-bottom: 0.75rem;
+    }
+    .section-head p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1.75rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.98rem;
+      text-decoration: none;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, color 0.25s ease;
+    }
+    .btn-primary {
+      background: var(--cta);
+      color: #fff;
+      box-shadow: 0 8px 20px rgba(255, 107, 74, 0.35);
+    }
+    .btn-primary:hover {
+      background: var(--cta-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 26px rgba(255, 107, 74, 0.42);
+    }
+    .btn-outline {
+      background: transparent;
+      border-color: rgba(255, 255, 255, 0.6);
+      color: #fff;
+    }
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.15);
+      transform: translateY(-2px);
+    }
+    .btn-secondary {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+    }
+    .btn-secondary:hover {
+      background: var(--primary);
+      color: #fff;
+      transform: translateY(-2px);
     }
 
     /* Header */
@@ -45,508 +131,973 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-      color: #fff;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      background: #fff;
+      box-shadow: 0 2px 12px rgba(11, 95, 115, 0.08);
     }
-    /* Adjusted .container to display flex for logo + title */
-    header .title-container {
+    .header-inner {
       display: flex;
       align-items: center;
-      justify-content: center; /* Center horizontally, adjust as needed */
-      padding: 0.75rem 0 0.5rem 0;
+      justify-content: space-between;
+      padding: 0.7rem 0;
+      gap: 1rem;
     }
-    /* Logo styling */
-    header .title-container img {
-      height: 45px;
-      margin-right: 15px; /* Space between logo and title */
-      /* Optional border if you want a visible outline */
-      border: 2px solid #fff; 
-      /* This rounds the corners. Use 50% to make it a perfect circle (if the logo is square). */
-      border-radius: 10px;
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
     }
-    header .title-container .site-title {
-      font-family: "Pacifico", cursive;
-      font-weight: normal;
-      font-size: 1.8rem;
+    .brand img {
+      height: 48px;
+      width: 48px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: var(--shadow-sm);
+    }
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+    .brand-text .name {
+      font-family: "Poppins", sans-serif;
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--primary-dark);
+    }
+    .brand-text .sub {
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
     }
 
-    /* Navigation */
-    nav {
-      background: var(--secondary-color);
+    nav.main-nav {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
     }
-    /* Hamburger Menu Toggle Button (hidden on larger screens) */
-    nav .menu-toggle {
+    nav.main-nav ul.nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 0.25rem;
+    }
+    nav.main-nav ul.nav-menu li a {
+      display: block;
+      padding: 0.6rem 1rem;
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 600;
+      font-size: 0.95rem;
+      border-radius: 8px;
+      position: relative;
+      transition: color 0.25s ease;
+    }
+    nav.main-nav ul.nav-menu li a:hover,
+    nav.main-nav ul.nav-menu li a.active {
+      color: var(--primary);
+    }
+    nav.main-nav ul.nav-menu li a::after {
+      content: "";
+      position: absolute;
+      left: 1rem;
+      right: 1rem;
+      bottom: 0.35rem;
+      height: 2px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.25s ease;
+    }
+    nav.main-nav ul.nav-menu li a:hover::after,
+    nav.main-nav ul.nav-menu li a.active::after {
+      transform: scaleX(1);
+    }
+
+    .nav-call {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--primary);
+      color: #fff;
+      padding: 0.6rem 1.25rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+      white-space: nowrap;
+      transition: background 0.25s ease, transform 0.25s ease;
+    }
+    .nav-call:hover { background: var(--primary-dark); transform: translateY(-2px); }
+    .nav-call svg { width: 16px; height: 16px; }
+
+    .menu-toggle {
       display: none;
       background: none;
       border: none;
-      color: #fff;
-      font-size: 2rem;
+      color: var(--primary-dark);
+      font-size: 1.8rem;
       cursor: pointer;
+      line-height: 1;
     }
-    nav ul.nav-menu {
-      display: flex;
-      justify-content: center;
-      list-style: none;
-    }
-    nav ul.nav-menu li {
-      margin: 0 1rem;
-    }
-    nav ul.nav-menu li a {
-      display: block;
-      padding: 0.75rem 1.5rem;
+
+    /* Hero */
+    .hero {
+      position: relative;
+      background: radial-gradient(circle at 15% 20%, rgba(41, 182, 246, 0.25), transparent 55%),
+                  linear-gradient(135deg, var(--primary), var(--primary-dark));
       color: #fff;
-      text-decoration: none;
-      transition: background 0.3s, transform 0.3s;
-      border-radius: 4px;
+      overflow: hidden;
+      padding: 4.5rem 0 5rem;
     }
-    nav ul.nav-menu li a:hover,
-    nav ul.nav-menu li a.active {
-      background: var(--accent-color);
-      transform: translateY(-2px);
-    }
-
-    /* Main Content */
-    main {
-      padding: 3rem 0;
-    }
-    section {
-      background: #fff;
-      margin-bottom: 4rem;
-      padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-      scroll-margin-top: 120px;
-    }
-    section h2 {
-      text-align: center;
-      margin-bottom: 1rem;
-      font-size: 2rem;
-      color: var(--primary-color);
-    }
-    section p {
-      text-align: center;
-      margin-bottom: 1rem;
-      font-size: 1.1rem;
-      padding: 0 1rem;
-    }
-    section img {
-      display: block;
-      max-width: 300px;
-      width: 100%;
-      margin: 1rem auto;
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 480px;
+      height: 480px;
       border-radius: 50%;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      background: rgba(255, 255, 255, 0.06);
+      top: -160px;
+      right: -140px;
     }
-
-    /* Flex container for dentist images */
-    .dentists {
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: 3rem;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-badges {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
+      gap: 0.6rem;
+      margin-bottom: 1.4rem;
+    }
+    .hero-badge {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      padding: 0.35rem 0.9rem;
+      border-radius: 50px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+    .hero h1 {
+      color: #fff;
+      font-size: clamp(2.1rem, 4.2vw, 3.2rem);
+      line-height: 1.15;
+      margin-bottom: 1.1rem;
+    }
+    .hero h1 span { color: #9cd4fb; }
+    .hero p.tagline-hero {
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #9cd4fb;
+      margin-bottom: 1rem;
+    }
+    .hero p.lead {
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.88);
+      max-width: 540px;
       margin-bottom: 2rem;
     }
-    .dentist {
-      flex: 1;
-      text-align: center;
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2.2rem;
     }
-    /* Style for View Bio button */
+    .hero-stats {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .hero-stats div strong {
+      display: block;
+      font-family: "Poppins", sans-serif;
+      font-size: 1.5rem;
+      color: #fff;
+    }
+    .hero-stats div span {
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.75);
+    }
+    .hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .hero-visual .blob {
+      position: absolute;
+      width: 360px;
+      height: 360px;
+      background: linear-gradient(135deg, var(--accent), #9cd4fb);
+      border-radius: 42% 58% 63% 37% / 41% 44% 56% 59%;
+      z-index: 0;
+      opacity: 0.9;
+    }
+    .hero-visual img {
+      position: relative;
+      z-index: 1;
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 6px solid rgba(255, 255, 255, 0.9);
+      box-shadow: var(--shadow-lg);
+    }
+    .hero-visual .visual-card {
+      position: absolute;
+      z-index: 2;
+      background: #fff;
+      color: var(--text-dark);
+      padding: 0.8rem 1.1rem;
+      border-radius: 12px;
+      box-shadow: var(--shadow-md);
+      font-size: 0.85rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .hero-visual .visual-card.top {
+      top: 6%;
+      left: -4%;
+    }
+    .hero-visual .visual-card.bottom {
+      bottom: 4%;
+      right: -6%;
+    }
+    .hero-visual .visual-card svg { width: 20px; height: 20px; color: var(--accent); flex-shrink: 0; }
+
+    /* Reveal animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Main sections */
+    main { background: var(--bg-alt); }
+    section.block {
+      padding: 5rem 0;
+      scroll-margin-top: 90px;
+    }
+    section.block.alt { background: #fff; }
+
+    /* About */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 3rem;
+      align-items: center;
+      margin-bottom: 3.5rem;
+    }
+    .about-grid img {
+      width: 100%;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-md);
+      aspect-ratio: 4/5;
+      object-fit: cover;
+    }
+    .about-text h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: 1rem; }
+    .about-text p { color: var(--text-muted); margin-bottom: 1rem; }
+    .about-text p:last-child { margin-bottom: 0; }
+
+    /* Team */
+    .team-intro { text-align: center; max-width: 700px; margin: 0 auto 2.5rem; color: var(--text-muted); }
+    .dentists {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.75rem;
+    }
+    .dentist-card {
+      background: #fff;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid var(--border);
+    }
+    .dentist-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+    }
+    .dentist-card .photo-wrap {
+      padding: 1.75rem 1.75rem 0;
+    }
+    .dentist-card img {
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin: 0 auto;
+      border: 4px solid var(--primary-light);
+    }
+    .dentist-card .info { padding: 1.1rem 1.5rem 1.75rem; }
+    .dentist-card h3 { font-size: 1.15rem; margin-bottom: 0.2rem; }
+    .dentist-card .role { color: var(--accent); font-weight: 600; font-size: 0.85rem; margin-bottom: 1rem; }
     .view-bio {
       display: inline-block;
-      background-color: var(--accent-color);
-      color: #fff;
-      padding: 0.5rem 1rem;
-      border-radius: 20px;
+      background-color: var(--primary-light);
+      color: var(--primary-dark);
+      padding: 0.5rem 1.2rem;
+      border-radius: 50px;
       text-decoration: none;
-      font-weight: bold;
-      font-size: 0.85rem;
-      transition: background-color 0.3s, transform 0.3s;
+      font-weight: 700;
+      font-size: 0.82rem;
+      transition: background-color 0.3s, transform 0.3s, color 0.3s;
     }
     .view-bio:hover {
-      background-color: var(--primary-color);
+      background-color: var(--primary);
+      color: #fff;
       transform: translateY(-2px);
     }
 
-    /* Services List Styling */
-    .services-list {
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: left;
-      font-size: 1.1rem;
-      padding: 0 1rem;
+    /* Why choose us */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.75rem;
     }
-    .services-list li {
-      margin-bottom: 0.75rem;
-      margin-left: 2rem;
-      margin-right: 2rem;
-      padding-left: 1.5rem;
-      position: relative;
+    .why-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 2rem 1.75rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .services-list li::before {
-      content: "✓";
-      position: absolute;
-      left: 0;
-      color: var(--accent-color);
-    }
-
-    .services-list-contrainer {
+    .why-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+    .why-card .icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: var(--primary-light);
+      color: var(--primary);
       display: flex;
-      justify-content: space-evenly;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.1rem;
     }
+    .why-card .icon svg { width: 26px; height: 26px; }
+    .why-card h3 { font-size: 1.15rem; margin-bottom: 0.6rem; }
+    .why-card p { color: var(--text-muted); font-size: 0.96rem; }
 
-    /* New CSS for 2-column layout on larger screens */
-    @media (min-width: 768px) {
-      .services-list {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem 2rem;
-      }
+    /* Gratitude quote */
+    .quote-block {
+      max-width: 800px;
+      margin: 3.5rem auto 0;
+      background: var(--primary-light);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      position: relative;
+      border-left: 5px solid var(--accent);
     }
+    .quote-block .quote-mark {
+      font-family: "Poppins", sans-serif;
+      font-size: 3.5rem;
+      color: var(--accent);
+      line-height: 1;
+      opacity: 0.6;
+    }
+    .quote-block p { color: var(--text-dark); font-size: 1.02rem; margin-top: -0.5rem; }
+    .quote-block .attribution { margin-top: 1rem; font-weight: 700; color: var(--primary-dark); font-size: 0.9rem; }
 
-    /* Map Section */
+    /* Services */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+    .service-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 1.75rem 1.5rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+    .service-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary-light), #fff);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+    .service-icon svg { width: 26px; height: 26px; }
+    .service-card h3 { font-size: 1.05rem; margin-bottom: 0.4rem; }
+    .service-card p { color: var(--text-muted); font-size: 0.88rem; }
+
+    /* Hours / contact banner */
+    .info-banner {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.75rem;
+    }
+    .info-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+    }
+    .info-card h3 {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 1.1rem;
+      margin-bottom: 1.1rem;
+    }
+    .info-card h3 svg { width: 22px; height: 22px; color: var(--accent); }
+    .hours-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+    .hours-table td { padding: 0.4rem 0; color: var(--text-muted); }
+    .hours-table td:last-child { text-align: right; font-weight: 600; color: var(--text-dark); }
+    .hours-table tr.today td { color: var(--primary); font-weight: 700; }
+    .info-card p.line { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 0.5rem; }
+    .info-card a.contact-link {
+      color: var(--primary-dark);
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .info-card a.contact-link:hover { text-decoration: underline; }
+
+    /* Location */
     .map-container {
-      margin-top: 2rem;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
     }
     .map-container iframe {
       width: 100%;
-      height: 450px;
+      height: 420px;
       border: none;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      display: block;
     }
+
+    /* CTA strip */
+    .cta-strip {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: #fff;
+      border-radius: var(--radius);
+      padding: 3rem 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .cta-strip h2 { color: #fff; font-size: 1.6rem; margin-bottom: 0.4rem; }
+    .cta-strip p { color: rgba(255,255,255,0.85); }
 
     /* Footer */
     footer {
-      background: linear-gradient(135deg, #1f1f1f, #333);
+      background: #0a1c3d;
       color: #fff;
-      padding: 3rem 0;
-      text-align: center;
+      padding: 3.5rem 0 1.5rem;
     }
-    footer .container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 2.5rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
-    footer .social-links {
-      display: flex;
-      gap: 1.5rem;
-      margin-bottom: 1rem;
-    }
-    footer .social-links a {
-      width: 45px;
-      height: 45px;
+    .footer-brand { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
+    .footer-brand img { height: 42px; width: 42px; border-radius: 10px; }
+    .footer-brand span { font-family: "Poppins", sans-serif; font-weight: 700; font-size: 1.1rem; }
+    .footer-col p, .footer-col a { color: rgba(255, 255, 255, 0.75); font-size: 0.92rem; }
+    footer h4 { color: #fff; font-size: 0.95rem; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    .footer-col ul a { text-decoration: none; transition: color 0.25s ease; }
+    .footer-col ul a:hover { color: var(--accent); }
+    .social-links { display: flex; gap: 0.9rem; margin-top: 1.2rem; }
+    .social-links a {
+      width: 40px;
+      height: 40px;
       display: flex;
       align-items: center;
       justify-content: center;
       border-radius: 50%;
-      background-color: #444;
+      background-color: rgba(255, 255, 255, 0.08);
       transition: background-color 0.3s, transform 0.3s;
     }
-    footer .social-links a:hover {
-      background-color: var(--accent-color);
-      transform: scale(1.1);
-    }
-    
-    footer .social-links a.facebook {
+    .social-links a:hover { background-color: var(--accent); transform: scale(1.1); }
+    .social-links a.facebook {
       background-image: url("https://img.icons8.com/ios-filled/50/ffffff/facebook-new.png");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: 60%;
+      background-repeat: no-repeat; background-position: center; background-size: 55%;
     }
-    footer .social-links a.x {
-      background-image: url("https://img.icons8.com/ios-filled/50/ffffff/x.png");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: 60%;
-    }
-    footer .social-links a.instagram {
+    .social-links a.instagram {
       background-image: url("https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: 60%;
+      background-repeat: no-repeat; background-position: center; background-size: 55%;
     }
-    footer .footer-info p {
-      margin: 0.25rem 0;
-      font-size: 0.95rem;
-    }
-    footer a {
-      color: #fff;
-      text-decoration: underline;
-    }
-    footer a:hover {
-      text-decoration: none;
-    }
-
-    /* Modern Telephone Element */
-    .modern-phone {
-      display: inline-flex;
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
       align-items: center;
-      padding: 0.5rem 1rem;
-      border: 1px solid var(--accent-color);
-      border-radius: 5px;
-      background-color: #fff;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding-top: 1.5rem;
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.55);
     }
-    .modern-phone .phone-number {
-      margin-left: 0.5rem;
-      font-weight: bold;
-      color: var(--primary-color);
+    .footer-bottom a { text-decoration: underline; }
+
+    /* Floating call button (mobile) */
+    .float-call {
+      display: none;
+      position: fixed;
+      bottom: 1.25rem;
+      right: 1.25rem;
+      z-index: 999;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: var(--cta);
+      color: #fff;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 24px rgba(255, 107, 74, 0.45);
       text-decoration: none;
+      animation: pulse 2.4s infinite;
+    }
+    .float-call svg { width: 26px; height: 26px; }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(255, 107, 74, 0.5); }
+      70% { box-shadow: 0 0 0 14px rgba(255, 107, 74, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(255, 107, 74, 0); }
     }
 
-    /* Responsive Styles */
-    @media (max-width: 768px) {
-      header .site-title {
-        font-size: 2rem;
-      }
-      /* Show the hamburger button and hide the nav links by default */
-      nav .menu-toggle {
-        display: block;
-        margin: 0.5rem;
-      }
-      nav ul.nav-menu {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-      }
-      /* Display nav links when the menu is toggled open */
-      nav ul.nav-menu.open {
-        display: flex;
-      }
-      nav ul.nav-menu li {
-        margin: 0.5rem 0;
-      }
-    }
-
-    /* For smaller screens, stack dentist images vertically */
-    @media (max-width: 600px) {
-      .dentists {
-        flex-direction: column;
-      }
-    }
-
-    /* Modal Styles */
+    /* Modal */
     .modal {
       display: none;
       position: fixed;
-      z-index: 1001;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
+      z-index: 1100;
+      inset: 0;
       overflow: auto;
-      background-color: rgba(0,0,0,0.4);
+      background-color: rgba(9, 25, 51, 0.55);
+      backdrop-filter: blur(2px);
     }
     .modal-content {
       background-color: #fff;
-      margin: 10% auto;
-      padding: 1rem;
-      border: 1px solid #888;
-      width: 80%;
+      margin: 6% auto;
+      padding: 2rem;
+      width: 90%;
       max-width: 600px;
-      border-radius: 8px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+      position: relative;
     }
     .close {
-      margin-right: 0.5rem;
+      position: absolute;
+      top: 1rem;
+      right: 1.25rem;
       color: #aaa;
-      float: right;
       font-size: 28px;
       font-weight: bold;
-    }
-    .close:hover,
-    .close:focus {
-      color: #000;
-      text-decoration: none;
       cursor: pointer;
+      line-height: 1;
     }
-
-    /* Modern Bio Card Styles */
-    .bio-card {
-      font-family: "Roboto", sans-serif;
-      color: var(--dark-text);
-      background: #fff;
-      /* padding: 1.5rem; */
-      padding: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      animation: fadeIn 0.3s ease-out;
-    }
-    .bio-card h2 {
-      font-size: 1.8rem;
-      margin-bottom: 0.5rem;
-      color: var(--primary-color);
-    }
-    .bio-card p {
-      font-size: 1rem;
-      margin-bottom: 0.5rem;
-    }
-    .bio-card ul {
-      list-style: none;
-      padding-left: 0;
-    }
+    .close:hover, .close:focus { color: var(--primary); }
+    .bio-card h2 { font-size: 1.5rem; margin-bottom: 0.75rem; padding-right: 1.5rem; }
+    .bio-card p { font-size: 0.98rem; margin-bottom: 0.5rem; color: var(--text-dark); }
+    .bio-card p strong { color: var(--primary-dark); }
+    .bio-card ul { list-style: none; padding-left: 0; margin-bottom: 0.75rem; }
     .bio-card ul li {
-      font-size: 0.95rem;
-      margin-bottom: 0.25rem;
+      font-size: 0.92rem;
+      margin-bottom: 0.3rem;
       position: relative;
       padding-left: 1.2rem;
+      color: var(--text-muted);
     }
     .bio-card ul li::before {
       content: "•";
       position: absolute;
       left: 0;
-      color: var(--accent-color);
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+      color: var(--accent);
     }
 
+    /* Responsive */
+    @media (max-width: 980px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-visual { order: -1; margin-bottom: 1rem; }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-grid img { max-width: 360px; margin: 0 auto; }
+      .dentists { grid-template-columns: repeat(2, 1fr); }
+      .why-grid { grid-template-columns: repeat(2, 1fr); }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .info-banner { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+    }
+
+    @media (max-width: 768px) {
+      nav.main-nav ul.nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #fff;
+        flex-direction: column;
+        box-shadow: var(--shadow-md);
+        padding: 0.75rem;
+        gap: 0.25rem;
+      }
+      nav.main-nav ul.nav-menu.open { display: flex; }
+      nav.main-nav { position: relative; flex: 1; justify-content: flex-end; }
+      .nav-call span.label { display: none; }
+      .menu-toggle { display: block; }
+      .float-call { display: flex; }
+      .hero { padding: 3rem 0 3.5rem; }
+      .hero-actions { flex-direction: column; align-items: stretch; }
+      .hero-actions .btn { justify-content: center; }
+      .hero-stats { justify-content: space-between; width: 100%; }
+      .cta-strip { flex-direction: column; text-align: center; }
+    }
+
+    @media (max-width: 600px) {
+      .dentists { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: 1fr; }
+      section.block { padding: 3.5rem 0; }
+      .hero-visual img { width: 220px; height: 220px; }
+      .hero-visual .blob { width: 260px; height: 260px; }
+    }
   </style>
 </head>
 <body>
-  <!-- Header and Navigation -->
+
+  <!-- Header -->
   <header>
-    <div class="title-container">
-      <!-- New logo added here -->
-      <img src="imgs/logo.jpeg" alt="Simi Valley Top Dentistry Logo" />
-      <h1 class="site-title">Simi Valley Top Dentistry</h1>
-    </div>
-    <nav>
-      <div class="container">
-        <!-- Hamburger Menu Toggle Button -->
-        <button class="menu-toggle" aria-label="Toggle Navigation">&#9776;</button>
+    <div class="container header-inner">
+      <a href="#top" class="brand">
+        <img src="imgs/logo.jpeg" alt="Simi Valley Top Dentistry Logo" />
+        <div class="brand-text">
+          <span class="name">Simi Valley Top Dentistry</span>
+          <span class="sub">Dentists You Will Trust for Life</span>
+        </div>
+      </a>
+      <nav class="main-nav">
+        <button class="menu-toggle" aria-label="Toggle Navigation" aria-expanded="false">&#9776;</button>
         <ul class="nav-menu">
-          <li><a href="#bio" class="active">About Us</a></li>
+          <li><a href="#about" class="active">About</a></li>
           <li><a href="#services">Services</a></li>
+          <li><a href="#why-us">Why Us</a></li>
           <li><a href="#location">Location</a></li>
         </ul>
-      </div>
-    </nav>
+      </nav>
+      <a href="tel:+18055833339" class="nav-call">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span class="label">(805) 583-3339</span>
+      </a>
+    </div>
   </header>
 
-  <!-- Main Content -->
-  <main class="container">
-    <!-- About Us Section -->
-    <section id="bio">
-      <h2>About Us</h2>
-      <p>Learn more about our practice and our team of dental professionals.</p>
-      <h3 style="text-align: center; margin-bottom: 1rem;">Meet Our Dentists</h3>
-      <div class="dentists">
-        <div class="dentist">
-          <img src="imgs/one.jpeg" alt="Dr. Saeed Bigdeli" />
-          <p><strong>Dr. Saeed Bigdeli, DDS</strong></p>
-          <p>
-            <a href="#" class="view-bio" data-bio='<div class="bio-card">
-              <h2>Dr. Saeed Bigdeli, DDS</h2>
-              <p><strong>Education:</strong></p>
-              <ul>
-                <li>B.S. in Biochemistry &amp; Business,  State University of New York</li>
-                <li>D.D.S., University of Southern California (USC), Cum Laude</li>
-              </ul>
-              <p><strong>Postgraduate Training:</strong></p>
-              <ul>
-                <li>General Practice Residency, Mount Sinai School of Medicine (New York)</li>
-              </ul>
-              <p><strong>Community &amp; Service:</strong></p>
-              <ul>
-                <li>AYUDA outreach initiatives</li>
-                <li>USC Mobile Clinic</li>
-              </ul>
-              <p>He blends advanced clinical expertise with a compassionate chairside manner, delivering family, cosmetic, and restorative care tailored to each patient.</p>
-            </div>'>
-              View Bio
-            </a>
-          </p>
+  <div id="top"></div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <div class="hero-badges">
+          <span class="hero-badge">USC-Trained Dentists</span>
+          <span class="hero-badge">Family-Owned Practice</span>
+          <span class="hero-badge">New Patients Welcome</span>
         </div>
-        <div class="dentist">
-          <img src="imgs/two.jpeg" alt="Dr. Dorsa Semsar" />
-          <p><strong>Dr. Dorsa Semsar, DMD</strong></p>
-          <p>
-            <a href="#" class="view-bio" data-bio='<div class="bio-card">
-              <h2>Dr. Dorsa Semsar, DMD</h2>
-              <p><strong>Education:</strong></p>
-              <ul>
-                <li>B.S. in Biology, University of California, Los Angeles (UCLA)</li>
-                <li>D.M.D., Boston University Henry M. Goldman School of Dental Medicine</li>
-              </ul>
-              <p><strong>Postgraduate Training:</strong></p>
-              <ul>
-                <li>Advanced Education in General Dentistry (AEGD) Residency, University of Connecticut School of Dental Medicine</li>
-              </ul>
-              <p><strong>Clinical Focus:</strong></p>
-              <ul>
-                <li>Comprehensive general, cosmetic &amp; restorative dentistry</li>
-                <li>Crowns, root canal therapy, and extractions</li>
-              </ul>
-              <p><strong>Community:</strong></p>
-              <ul>
-                <li>Community outreach &amp; pediatric dental education</li>
-              </ul>
-            </div>'>
-              View Bio
-            </a>
-          </p>
+        <h1>Honest, Patient-First Dentistry in <span>Simi Valley</span></h1>
+        <p class="tagline-hero">Dentists You Will Trust for Life. We treat you like family.</p>
+        <p class="lead">From routine checkups to smile makeovers, our team combines advanced clinical training with genuine, unhurried care, because your treatment plan should be built around you, not your insurance.</p>
+        <div class="hero-actions">
+          <a href="tel:+18055833339" class="btn btn-primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Call (805) 583-3339
+          </a>
+          <a href="#services" class="btn btn-outline">Explore Services</a>
         </div>
-        <div class="dentist">
-          <img src="imgs/RobertoRoges.jpg" alt="Dr. Roberto Roges" />
-          <p><strong>Dr. Roberto Roges, DDS</strong></p>
-          <p>
-            <a href="#" class="view-bio" data-bio='<div class="bio-card">
-              <h2>Dr. Roberto Roges, DDS</h2>
-              <p><strong>Education:</strong></p>
-              <ul>
-                <li>D.D.S., University of California San Francisco (UCSF)</li>
-              </ul>
-              <p><strong>Postgraduate Training:</strong></p>
-              <ul>
-                <li>Advanced Training in Endodontics, University of Southern California (USC) </li>
-              </ul>
-            </div>'>
-              View Bio
-            </a>
-          </p>
+        <div class="hero-stats">
+          <div><strong>Mon&ndash;Thu</strong><span>10 AM &ndash; 5 PM</span></div>
+          <div><strong>Fri</strong><span>10 AM &ndash; 2 PM</span></div>
+          <div><strong>Simi Valley</strong><span>Cochran St, Suite E</span></div>
         </div>
       </div>
-      <p>
-        Our dentists are deeply committed to providing high-quality dental care. Driven by their passion for excellence and patient-centered treatment, they decided to open their own dental office. This allows them to create a welcoming environment where they can offer the best possible care, prioritize patient comfort, and utilize the latest advancements in dentistry to improve oral health and overall well-being.
-      </p>
-    </section>
+      <div class="hero-visual">
+        <div class="blob"></div>
+        <img src="imgs/one.jpeg" alt="Dr. Saeed Bigdeli, DDS" />
+        <div class="visual-card top">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+          Patient-First Care
+        </div>
+        <div class="visual-card bottom">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z"/><path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg>
+          USC School of Dentistry
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Services Section -->
-    <section id="services">
-      <h2>Our Services</h2>
-      <p>
-        We offer a wide range of dental treatments to help you achieve a healthy and beautiful smile.
-        <br/>Our operating hours are <strong>Monday – Thursday, 10 AM – 5 PM</strong>,
-        <strong>Friday, 10 AM – 2 PM</strong>.
-        <br/>Call us today to schedule your appointment!
-        <br/><span itemprop="telephone" class="modern-phone">
-		      &#128222;<a href="tel:+18051234567" class="phone-number">+1 (805) 583-3339</a>
-        </span>
-      </p>
-      <p>Our services are as follows:</p>
-      <div class="services-list-contrainer">
-        <ul class="services-list">
-          <li><strong>General Dentistry</strong></li>
-          <li><strong>Endodontics</strong></li>
-          <li><strong>Oral Surgery</strong></li>
-          <li><strong>Implants</strong></li>
-          <li><strong>Dental Aesthetics</strong></li>
-          <li><strong>Dental prostheses</strong></li>
-          <li><strong>Periodontics</strong></li>
-          <li><strong>Pediatrics</strong></li>
-        </ul>
+  <main>
+    <!-- About -->
+    <section id="about" class="block alt">
+      <div class="container">
+        <div class="about-grid reveal">
+          <img src="imgs/one.jpeg" alt="Dr. Saeed Bigdeli, DDS" />
+          <div class="about-text">
+            <span class="eyebrow">Meet the Founder</span>
+            <h2>Dr. Saeed Bigdeli, DDS</h2>
+            <p>Dr. Saeed Bigdeli is dedicated to providing high-quality, patient-centered dental care in a warm and welcoming environment. A proud graduate of the University of Southern California (USC) School of Dentistry, he combines advanced clinical expertise with genuine compassion for every patient he serves.</p>
+            <p>His personal journey has shaped his caring approach to dentistry. At just 14 years old, he moved to a new country on his own, an experience that instilled in him values of resilience, kindness, and empathy. These qualities remain at the heart of his practice philosophy: helping every patient feel comfortable, confident, and cared for.</p>
+            <p>Throughout his career, Dr. Bigdeli has been actively involved in community outreach programs, including AYUDA, the USC Mobile Clinic, and a General Practice Residency at Mount Sinai School of Medicine in New York, experiences that reinforced his belief that dentistry is about improving lives, not just treating teeth.</p>
+          </div>
+        </div>
+
+        <div class="team-intro reveal">
+          <span class="eyebrow">Our Team</span>
+          <h2>Meet Our Dentists</h2>
+          <p>Every doctor on our team is driven by a passion for excellence and patient-centered treatment, utilizing the latest advancements in dentistry to improve oral health and overall well-being.</p>
+        </div>
+
+        <div class="dentists reveal">
+          <div class="dentist-card">
+            <div class="photo-wrap"><img src="imgs/one.jpeg" alt="Dr. Saeed Bigdeli" /></div>
+            <div class="info">
+              <h3>Dr. Saeed Bigdeli, DDS</h3>
+              <div class="role">Founder &amp; General Dentist</div>
+              <a href="#" class="view-bio" data-bio='<div class="bio-card">
+                <h2>Dr. Saeed Bigdeli, DDS</h2>
+                <p><strong>Education:</strong></p>
+                <ul>
+                  <li>B.S. in Biochemistry &amp; Business, State University of New York</li>
+                  <li>D.D.S., University of Southern California (USC), Cum Laude</li>
+                </ul>
+                <p><strong>Postgraduate Training:</strong></p>
+                <ul>
+                  <li>General Practice Residency, Mount Sinai School of Medicine (New York)</li>
+                </ul>
+                <p><strong>Community &amp; Service:</strong></p>
+                <ul>
+                  <li>AYUDA outreach initiatives</li>
+                  <li>USC Mobile Clinic</li>
+                </ul>
+                <p>He blends advanced clinical expertise with a compassionate chairside manner, delivering family, cosmetic, and restorative care tailored to each patient.</p>
+              </div>'>View Bio</a>
+            </div>
+          </div>
+
+          <div class="dentist-card">
+            <div class="photo-wrap"><img src="imgs/two.jpeg" alt="Dr. Dorsa Semsar" /></div>
+            <div class="info">
+              <h3>Dr. Dorsa Semsar, DMD</h3>
+              <div class="role">General &amp; Restorative Dentist</div>
+              <a href="#" class="view-bio" data-bio='<div class="bio-card">
+                <h2>Dr. Dorsa Semsar, DMD</h2>
+                <p><strong>Education:</strong></p>
+                <ul>
+                  <li>B.S. in Biology, University of California, Los Angeles (UCLA)</li>
+                  <li>D.M.D., Boston University Henry M. Goldman School of Dental Medicine</li>
+                </ul>
+                <p><strong>Postgraduate Training:</strong></p>
+                <ul>
+                  <li>Advanced Education in General Dentistry (AEGD) Residency, University of Connecticut School of Dental Medicine</li>
+                </ul>
+                <p><strong>Clinical Focus:</strong></p>
+                <ul>
+                  <li>Comprehensive general, cosmetic &amp; restorative dentistry</li>
+                  <li>Crowns, root canal therapy, and extractions</li>
+                </ul>
+                <p><strong>Community:</strong></p>
+                <ul>
+                  <li>Community outreach &amp; pediatric dental education</li>
+                </ul>
+              </div>'>View Bio</a>
+            </div>
+          </div>
+
+          <div class="dentist-card">
+            <div class="photo-wrap"><img src="imgs/RobertoRoges.jpg" alt="Dr. Roberto Roges" /></div>
+            <div class="info">
+              <h3>Dr. Roberto Roges, DDS</h3>
+              <div class="role">Endodontic Specialist</div>
+              <a href="#" class="view-bio" data-bio='<div class="bio-card">
+                <h2>Dr. Roberto Roges, DDS</h2>
+                <p><strong>Education:</strong></p>
+                <ul>
+                  <li>D.D.S., University of California San Francisco (UCSF)</li>
+                </ul>
+                <p><strong>Postgraduate Training:</strong></p>
+                <ul>
+                  <li>Advanced Training in Endodontics, University of Southern California (USC)</li>
+                </ul>
+              </div>'>View Bio</a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- Location Section -->
-    <section id="location">
-      <h2>Our Location</h2>
-      <p>3977 Cochran St, Suite E, Simi Valley, CA</p>
-      <div class="map-container">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3296.7563992346145!2d-118.72107528804491!3d34.2802635729596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80e82932740b5d29%3A0x72605556dde7e53c!2sSimi%20Valley%20Top%20Dentistry!5e0!3m2!1sen!2sus!4v1740270946038!5m2!1sen!2sus" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
+    <!-- Why Choose Us -->
+    <section id="why-us" class="block">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Why Choose Us</span>
+          <h2>Where Honesty, Trust &amp; Quality Care Come First</h2>
+          <p>When Dr. Bigdeli founded Simi Valley Top Dentistry, his mission was simple: create a practice where patients always come first.</p>
+        </div>
+        <div class="why-grid reveal">
+          <div class="why-card">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11z"/><path d="M9 12l2 2 4-4"/></svg>
+            </div>
+            <h3>Patients Before Insurance</h3>
+            <p>Every treatment plan is guided by what's best for you, not by what insurance happens to cover. We take time to listen and design care around your long-term oral health.</p>
+          </div>
+          <div class="why-card">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="4"/><path d="M17 11c1.66 0 3-1.79 3-4s-1.34-4-3-4"/><path d="M1 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/><path d="M23 21v-1a6 6 0 0 0-4-5.66"/></svg>
+            </div>
+            <h3>Personalized Attention</h3>
+            <p>Built on integrity and transparency, our team takes the time to understand your needs and provide custom care designed for your smile, not a one-size-fits-all plan.</p>
+          </div>
+          <div class="why-card">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
+            </div>
+            <h3>A Relaxing, Family Office</h3>
+            <p>Conveniently located in Simi Valley, our office provides a welcoming atmosphere where every patient is treated with honesty and respect from the moment they walk in.</p>
+          </div>
+        </div>
+
+        <div class="quote-block reveal">
+          <div class="quote-mark">&ldquo;</div>
+          <p>Reflecting on his journey, Dr. Bigdeli is deeply thankful for the mentors who have guided him along the way. He recently reconnected with two of his esteemed USC professors, Dr. Roberto Roges and Dr. Rafael Roges, Director of the Advanced Dental Education Program in Endodontics. Sharing a meal and celebrating how far he has come reminded Dr. Bigdeli of the importance of mentorship, growth, and gratitude, values that continue to inspire his commitment to excellence in patient care.</p>
+          <div class="attribution">A Note of Gratitude from Dr. Bigdeli</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="block alt">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Our Services</span>
+          <h2>Comprehensive Dental Care for the Whole Family</h2>
+          <p>We offer a full range of dental treatments to help you achieve a healthy, confident smile, all under one roof.</p>
+        </div>
+
+        <div class="services-grid reveal">
+          <div class="service-card">
+            <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></div>
+            <h3>General Dentistry</h3>
+            <p>Checkups, cleanings &amp; fluoride treatments to keep your smile healthy year-round.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg></div>
+            <h3>Endodontics</h3>
+            <p>Root canal therapy performed with precision to save and protect your natural teeth.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></div>
+            <h3>Oral Surgery</h3>
+            <p>Extractions and surgical procedures handled with comfort and care.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v6M9 9h6l-1 12h-4L9 9z"/></svg></div>
+            <h3>Dental Implants</h3>
+            <p>Durable, natural-looking tooth replacement for missing or damaged teeth.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.5 5.5L19 10l-5.5 1.5L12 17l-1.5-5.5L5 10l5.5-1.5L12 3z"/></svg></div>
+            <h3>Dental Aesthetics</h3>
+            <p>Teeth whitening, veneers &amp; smile makeovers designed around your goals.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10a8 8 0 0 0 16 0"/><circle cx="8" cy="8" r="1"/><circle cx="12" cy="7" r="1"/><circle cx="16" cy="8" r="1"/></svg></div>
+            <h3>Dental Prostheses</h3>
+            <p>Crowns, bridges &amp; dentures crafted to restore form and function.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20C4 10 10 4 20 4c0 10-6 16-16 16z"/><path d="M4 20L14 10"/></svg></div>
+            <h3>Periodontics</h3>
+            <p>Comprehensive gum health treatment to protect the foundation of your smile.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="9" cy="10" r="1"/><circle cx="15" cy="10" r="1"/><path d="M8 14c1.5 2 6.5 2 8 0"/></svg></div>
+            <h3>Pediatric Dentistry</h3>
+            <p>Gentle, friendly care that helps kids build healthy habits early on.</p>
+          </div>
+        </div>
+
+        <div class="info-banner reveal">
+          <div class="info-card">
+            <h3>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              Office Hours
+            </h3>
+            <table class="hours-table">
+              <tr><td>Monday</td><td>10 AM &ndash; 5 PM</td></tr>
+              <tr><td>Tuesday</td><td>10 AM &ndash; 5 PM</td></tr>
+              <tr><td>Wednesday</td><td>10 AM &ndash; 5 PM</td></tr>
+              <tr><td>Thursday</td><td>10 AM &ndash; 5 PM</td></tr>
+              <tr><td>Friday</td><td>10 AM &ndash; 2 PM</td></tr>
+              <tr><td>Saturday</td><td>Closed</td></tr>
+              <tr><td>Sunday</td><td>Closed</td></tr>
+            </table>
+          </div>
+          <div class="info-card">
+            <h3>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              Get in Touch
+            </h3>
+            <p class="line">Call us today to schedule your appointment.</p>
+            <p class="line"><a class="contact-link" href="tel:+18055833339">+1 (805) 583-3339</a></p>
+            <p class="line"><a class="contact-link" href="mailto:smile@simivalleytopdentistry.com">smile@simivalleytopdentistry.com</a></p>
+          </div>
+          <div class="info-card">
+            <h3>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Visit Our Office
+            </h3>
+            <p class="line">3977 Cochran St, Suite E<br/>Simi Valley, CA</p>
+            <a class="contact-link" href="#location">View on map &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Location -->
+    <section id="location" class="block">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Find Us</span>
+          <h2>Our Location</h2>
+          <p>3977 Cochran St, Suite E, Simi Valley, CA</p>
+        </div>
+        <div class="map-container reveal">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3296.7563992346145!2d-118.72107528804491!3d34.2802635729596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80e82932740b5d29%3A0x72605556dde7e53c!2sSimi%20Valley%20Top%20Dentistry!5e0!3m2!1sen!2sus!4v1740270946038!5m2!1sen!2sus" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+
+        <div class="cta-strip reveal" style="margin-top: 3rem;">
+          <div>
+            <h2>Ready for your best smile yet?</h2>
+            <p>New patients are always welcome at Simi Valley Top Dentistry.</p>
+          </div>
+          <a href="tel:+18055833339" class="btn btn-primary">Call (805) 583-3339</a>
+        </div>
       </div>
     </section>
   </main>
@@ -559,43 +1110,94 @@
     </div>
   </div>
 
+  <!-- Floating call button (mobile) -->
+  <a href="tel:+18055833339" class="float-call" aria-label="Call Simi Valley Top Dentistry">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+  </a>
+
   <!-- Footer -->
   <footer>
     <div class="container">
-      <div class="social-links">
-        <a href="https://www.facebook.com/profile.php?id=61572684355123&mibextid=LQQJ4d" target="_blank" class="facebook" aria-label="Facebook"></a>
-        <!-- <a href="https://x.com" target="_blank" class="x" aria-label="X"></a> -->
-        <a href="https://www.instagram.com/simivalleytopdentistry/" target="_blank" class="instagram" aria-label="Instagram"></a>
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-brand">
+            <img src="imgs/logo.jpeg" alt="Simi Valley Top Dentistry Logo" />
+            <span>Simi Valley Top Dentistry</span>
+          </div>
+          <p>Dentists you will trust for life. We treat you like family.</p>
+          <div class="social-links">
+            <a href="https://www.facebook.com/profile.php?id=61572684355123&mibextid=LQQJ4d" target="_blank" rel="noopener" class="facebook" aria-label="Facebook"></a>
+            <a href="https://www.instagram.com/simivalleytopdentistry/" target="_blank" rel="noopener" class="instagram" aria-label="Instagram"></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#why-us">Why Choose Us</a></li>
+            <li><a href="#location">Location</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+18055833339">+1 (805) 583-3339</a></li>
+            <li><a href="mailto:smile@simivalleytopdentistry.com">smile@simivalleytopdentistry.com</a></li>
+            <li>3977 Cochran St, Suite E<br/>Simi Valley, CA</li>
+          </ul>
+        </div>
       </div>
-      <div class="footer-info">
-        <p>
-          Contact us at:
-          <a href="mailto:smile@simivalleytopdentistry.com">smile@simivalleytopdentistry.com</a>
-          | +1 (805) 583-3339
-        </p>
-        <p>&copy; 2025 Simi Valley Top Dentistry. All rights reserved.</p>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Simi Valley Top Dentistry. All rights reserved.</span>
+        <span>Site by Simi Valley Top Dentistry</span>
       </div>
     </div>
   </footer>
 
-  <!-- JavaScript for Active Navigation and Mobile Menu Toggle -->
+  <!-- Structured data for local SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Dentist",
+    "name": "Simi Valley Top Dentistry",
+    "image": "imgs/logo.jpeg",
+    "telephone": "+1-805-583-3339",
+    "email": "smile@simivalleytopdentistry.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "3977 Cochran St, Suite E",
+      "addressLocality": "Simi Valley",
+      "addressRegion": "CA",
+      "addressCountry": "US"
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"], "opens": "10:00", "closes": "17:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "10:00", "closes": "14:00" }
+    ],
+    "sameAs": [
+      "https://www.facebook.com/profile.php?id=61572684355123",
+      "https://www.instagram.com/simivalleytopdentistry/"
+    ]
+  }
+  </script>
+
+  <!-- JavaScript -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      // Active Navigation Link
-      const sections = document.querySelectorAll("section");
-      const navLinks = document.querySelectorAll("nav ul.nav-menu li a");
+      // Active nav link on scroll
+      const sections = document.querySelectorAll("main section[id]");
+      const navLinks = document.querySelectorAll("nav.main-nav ul.nav-menu li a");
 
       function activateNavLink() {
         let currentSection = "";
-
         sections.forEach((section) => {
-          const sectionTop = section.offsetTop - 80; // Adjust based on header height
+          const sectionTop = section.offsetTop - 100;
           const sectionHeight = section.clientHeight;
           if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
             currentSection = section.getAttribute("id");
           }
         });
-
         navLinks.forEach((link) => {
           link.classList.remove("active");
           if (link.getAttribute("href") === `#${currentSection}`) {
@@ -603,46 +1205,53 @@
           }
         });
       }
-
       window.addEventListener("scroll", activateNavLink);
 
-      // Mobile Menu Toggle
-      const menuToggle = document.querySelector('.menu-toggle');
-      const navMenu = document.querySelector('.nav-menu');
-
-      menuToggle.addEventListener('click', function() {
-        navMenu.classList.toggle('open');
+      // Mobile menu toggle
+      const menuToggle = document.querySelector(".menu-toggle");
+      const navMenu = document.querySelector(".nav-menu");
+      menuToggle.addEventListener("click", function () {
+        const isOpen = navMenu.classList.toggle("open");
+        menuToggle.setAttribute("aria-expanded", isOpen);
       });
-
-
       navLinks.forEach((link) => {
-        link.addEventListener('click', function() {
-          navMenu.classList.remove('open');
+        link.addEventListener("click", function () {
+          navMenu.classList.remove("open");
+          menuToggle.setAttribute("aria-expanded", "false");
         });
       });
-      
-      // Modal functionality for View Bio
+
+      // View Bio modal
       const modal = document.getElementById("bioModal");
       const modalContent = document.getElementById("bioContent");
       const closeBtn = document.querySelector(".close");
-      document.querySelectorAll(".view-bio").forEach(function(button) {
-        button.addEventListener("click", function(e) {
+      document.querySelectorAll(".view-bio").forEach(function (button) {
+        button.addEventListener("click", function (e) {
           e.preventDefault();
-          const bio = button.getAttribute("data-bio");
-          modalContent.innerHTML = bio;
+          modalContent.innerHTML = button.getAttribute("data-bio");
           modal.style.display = "block";
         });
       });
-      closeBtn.addEventListener("click", function() {
-        modal.style.display = "none";
+      closeBtn.addEventListener("click", function () { modal.style.display = "none"; });
+      window.addEventListener("click", function (e) {
+        if (e.target === modal) modal.style.display = "none";
       });
-      window.addEventListener("click", function(e) {
-        if (e.target == modal) {
-          modal.style.display = "none";
-        }
+      window.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") modal.style.display = "none";
       });
+
+      // Scroll reveal
+      const revealEls = document.querySelectorAll(".reveal");
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      revealEls.forEach((el) => observer.observe(el));
     });
   </script>
 </body>
 </html>
-
