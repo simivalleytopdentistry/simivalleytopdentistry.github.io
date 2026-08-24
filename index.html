@@ -513,24 +513,26 @@
     .service-card {
       background: #fff;
       border-radius: var(--radius);
-      padding: 1.75rem 1.5rem;
+      overflow: hidden;
       box-shadow: var(--shadow-sm);
       border: 1px solid var(--border);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
-    .service-icon {
-      width: 54px;
-      height: 54px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--primary-light), #fff);
-      color: var(--primary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1rem;
+    .service-media {
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      background: var(--primary-light);
     }
-    .service-icon svg { width: 26px; height: 26px; }
+    .service-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .service-card:hover .service-media img { transform: scale(1.06); }
+    .service-body { padding: 1.35rem 1.5rem 1.6rem; }
     .service-card h3 { font-size: 1.05rem; margin-bottom: 0.4rem; }
     .service-card p { color: var(--text-muted); font-size: 0.88rem; }
 
@@ -1002,7 +1004,7 @@
             <div class="photo-wrap"><img src="imgs/one.jpeg" alt="Dr. Saeed Bigdeli" /></div>
             <div class="info">
               <h3>Dr. Saeed Bigdeli, DDS</h3>
-              <div class="role">General Dentist</div>
+              <div class="role">Advanced General Dentist</div>
               <a href="#" class="view-bio" data-bio='<div class="bio-card">
                 <h2>Dr. Saeed Bigdeli, DDS</h2>
                 <p><strong>Education:</strong></p>
@@ -1086,44 +1088,76 @@
 
         <div class="services-grid reveal">
           <div class="service-card">
-            <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></div>
-            <h3>General Dentistry</h3>
-            <p>Checkups, cleanings &amp; fluoride treatments to keep your smile healthy year-round.</p>
+            <div class="service-media">
+              <img src="imgs/services/general-dentistry.jpg" alt="Dental professional holding a model of teeth and a dental scaler" width="800" height="520" loading="lazy" decoding="async">
+            </div>
+            <div class="service-body">
+              <h3>General Dentistry</h3>
+              <p>Checkups, cleanings &amp; fluoride treatments to keep your smile healthy year-round.</p>
+            </div>
           </div>
           <div class="service-card">
-            <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg></div>
-            <h3>Endodontics</h3>
-            <p>Root canal therapy performed with precision to save and protect your natural teeth.</p>
+            <div class="service-media">
+              <img src="imgs/services/endodontics.jpg" alt="Dentist holding a cross-section tooth model showing the root canal" width="800" height="520" loading="lazy" decoding="async">
+            </div>
+            <div class="service-body">
+              <h3>Endodontics</h3>
+              <p>Root canal therapy performed with precision to save and protect your natural teeth.</p>
+            </div>
           </div>
           <div class="service-card">
-            <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></div>
-            <h3>Oral Surgery</h3>
-            <p>Extractions and surgical procedures handled with comfort and care.</p>
+            <div class="service-media">
+              <img src="imgs/services/oral-surgery.jpg" alt="Oral surgeon and assistant performing a surgical procedure on a patient" width="800" height="520" loading="lazy" decoding="async">
+            </div>
+            <div class="service-body">
+              <h3>Oral Surgery</h3>
+              <p>Extractions and surgical procedures handled with comfort and care.</p>
+            </div>
           </div>
           <div class="service-card">
-            <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v6M9 9h6l-1 12h-4L9 9z"/></svg></div>
-            <h3>Dental Implants</h3>
-            <p>Durable, natural-looking tooth replacement for missing or damaged teeth.</p>
+            <div class="service-media">
+              <img src="imgs/services/dental-implants.jpg" alt="Model of a dental implant screw set between two natural teeth" width="800" height="520" loading="lazy" decoding="async">
+            </div>
+            <div class="service-body">
+              <h3>Dental Implants</h3>
+              <p>Durable, natural-looking tooth replacement for missing or damaged teeth.</p>
+            </div>
           </div>
           <div class="service-card">
-            <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.5 5.5L19 10l-5.5 1.5L12 17l-1.5-5.5L5 10l5.5-1.5L12 3z"/></svg></div>
-            <h3>Dental Aesthetics</h3>
-            <p>Teeth whitening, veneers &amp; smile makeovers designed around your goals.</p>
+            <div class="service-media">
+              <img src="imgs/services/dental-aesthetics.jpg" alt="Tooth shade guide held against a smiling patient's teeth to match colour" width="800" height="520" loading="lazy" decoding="async">
+            </div>
+            <div class="service-body">
+              <h3>Dental Aesthetics</h3>
+              <p>Teeth whitening, veneers &amp; smile makeovers designed around your goals.</p>
+            </div>
           </div>
           <div class="service-card">
-            <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10a8 8 0 0 0 16 0"/><circle cx="8" cy="8" r="1"/><circle cx="12" cy="7" r="1"/><circle cx="16" cy="8" r="1"/></svg></div>
-            <h3>Dental Prostheses</h3>
-            <p>Crowns, bridges &amp; dentures crafted to restore form and function.</p>
+            <div class="service-media">
+              <img src="imgs/services/dental-prostheses.jpg" alt="Dental technician holding a plaster cast of upper and lower dentures" width="800" height="520" loading="lazy" decoding="async">
+            </div>
+            <div class="service-body">
+              <h3>Dental Prostheses</h3>
+              <p>Crowns, bridges &amp; dentures crafted to restore form and function.</p>
+            </div>
           </div>
           <div class="service-card">
-            <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20C4 10 10 4 20 4c0 10-6 16-16 16z"/><path d="M4 20L14 10"/></svg></div>
-            <h3>Periodontics</h3>
-            <p>Comprehensive gum health treatment to protect the foundation of your smile.</p>
+            <div class="service-media">
+              <img src="imgs/services/periodontics.jpg" alt="Dentist examining a patient gums with a mirror and probe" width="800" height="520" loading="lazy" decoding="async">
+            </div>
+            <div class="service-body">
+              <h3>Periodontics</h3>
+              <p>Comprehensive gum health treatment to protect the foundation of your smile.</p>
+            </div>
           </div>
           <div class="service-card">
-            <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="9" cy="10" r="1"/><circle cx="15" cy="10" r="1"/><path d="M8 14c1.5 2 6.5 2 8 0"/></svg></div>
-            <h3>Pediatric Dentistry</h3>
-            <p>Gentle, friendly care that helps kids build healthy habits early on.</p>
+            <div class="service-media">
+              <img src="imgs/services/pediatric-dentistry.jpg" alt="Smiling young girl in a dental chair during a pediatric visit" width="800" height="520" loading="lazy" decoding="async">
+            </div>
+            <div class="service-body">
+              <h3>Pediatric Dentistry</h3>
+              <p>Gentle, friendly care that helps kids build healthy habits early on.</p>
+            </div>
           </div>
         </div>
 
